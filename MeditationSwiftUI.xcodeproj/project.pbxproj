@@ -8,18 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		C318EC0E25CF212D005131A9 /* MeditationSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC0D25CF212D005131A9 /* MeditationSwiftUIApp.swift */; };
-		C318EC1025CF212D005131A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC0F25CF212D005131A9 /* ContentView.swift */; };
 		C318EC1225CF212E005131A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C318EC1125CF212E005131A9 /* Assets.xcassets */; };
 		C318EC1525CF212E005131A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C318EC1425CF212E005131A9 /* Preview Assets.xcassets */; };
+		C318EC1E25CF213F005131A9 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C318EC1D25CF213F005131A9 /* Launch Screen.storyboard */; };
+		C318EC2425CF255A005131A9 /* OnBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC2325CF255A005131A9 /* OnBoardView.swift */; };
+		C318EC2725CF26F1005131A9 /* Font in Resources */ = {isa = PBXBuildFile; fileRef = C318EC2625CF26F1005131A9 /* Font */; };
+		C318EC2B25CF2E85005131A9 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC2A25CF2E85005131A9 /* RootView.swift */; };
+		C318EC2E25CF2F1F005131A9 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC2D25CF2F1F005131A9 /* SignInView.swift */; };
+		C318EC3225CF3722005131A9 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC3125CF3722005131A9 /* RegistrationView.swift */; };
+		C318EC3525CF3ECA005131A9 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC3425CF3ECA005131A9 /* MainTabView.swift */; };
+		C318EC3825D00056005131A9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC3725D00056005131A9 /* MainView.swift */; };
+		C318EC3B25D0008E005131A9 /* SoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC3A25D0008E005131A9 /* SoundView.swift */; };
+		C318EC3E25D000F7005131A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC3D25D000F7005131A9 /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C318EC0A25CF212D005131A9 /* MeditationSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C318EC0D25CF212D005131A9 /* MeditationSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationSwiftUIApp.swift; sourceTree = "<group>"; };
-		C318EC0F25CF212D005131A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C318EC1125CF212E005131A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C318EC1425CF212E005131A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C318EC1625CF212E005131A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C318EC1D25CF213F005131A9 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C318EC2325CF255A005131A9 /* OnBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardView.swift; sourceTree = "<group>"; };
+		C318EC2625CF26F1005131A9 /* Font */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Font; sourceTree = "<group>"; };
+		C318EC2A25CF2E85005131A9 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		C318EC2D25CF2F1F005131A9 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		C318EC3125CF3722005131A9 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
+		C318EC3425CF3ECA005131A9 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		C318EC3725D00056005131A9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C318EC3A25D0008E005131A9 /* SoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundView.swift; sourceTree = "<group>"; };
+		C318EC3D25D000F7005131A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +70,19 @@
 		C318EC0C25CF212D005131A9 /* MeditationSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				C318EC2625CF26F1005131A9 /* Font */,
 				C318EC0D25CF212D005131A9 /* MeditationSwiftUIApp.swift */,
-				C318EC0F25CF212D005131A9 /* ContentView.swift */,
+				C318EC2A25CF2E85005131A9 /* RootView.swift */,
+				C318EC2325CF255A005131A9 /* OnBoardView.swift */,
+				C318EC2D25CF2F1F005131A9 /* SignInView.swift */,
+				C318EC3125CF3722005131A9 /* RegistrationView.swift */,
+				C318EC3425CF3ECA005131A9 /* MainTabView.swift */,
+				C318EC3725D00056005131A9 /* MainView.swift */,
+				C318EC3A25D0008E005131A9 /* SoundView.swift */,
+				C318EC3D25D000F7005131A9 /* ProfileView.swift */,
 				C318EC1125CF212E005131A9 /* Assets.xcassets */,
 				C318EC1625CF212E005131A9 /* Info.plist */,
+				C318EC1D25CF213F005131A9 /* Launch Screen.storyboard */,
 				C318EC1325CF212E005131A9 /* Preview Content */,
 			);
 			path = MeditationSwiftUI;
@@ -126,7 +153,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C318EC1E25CF213F005131A9 /* Launch Screen.storyboard in Resources */,
 				C318EC1525CF212E005131A9 /* Preview Assets.xcassets in Resources */,
+				C318EC2725CF26F1005131A9 /* Font in Resources */,
 				C318EC1225CF212E005131A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +167,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C318EC1025CF212D005131A9 /* ContentView.swift in Sources */,
+				C318EC2425CF255A005131A9 /* OnBoardView.swift in Sources */,
+				C318EC3E25D000F7005131A9 /* ProfileView.swift in Sources */,
+				C318EC3825D00056005131A9 /* MainView.swift in Sources */,
 				C318EC0E25CF212D005131A9 /* MeditationSwiftUIApp.swift in Sources */,
+				C318EC2E25CF2F1F005131A9 /* SignInView.swift in Sources */,
+				C318EC2B25CF2E85005131A9 /* RootView.swift in Sources */,
+				C318EC3225CF3722005131A9 /* RegistrationView.swift in Sources */,
+				C318EC3B25D0008E005131A9 /* SoundView.swift in Sources */,
+				C318EC3525CF3ECA005131A9 /* MainTabView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

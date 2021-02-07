@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Font/AlegreyaSans-Medium.ttf</string>
+		<string>Font/Alegreya-Regular.ttf</string>
+		<string>Font/Alegreya-MediumItalic.ttf</string>
+		<string>Font/Alegreya-Medium.ttf</string>
+		<string>Font/Alegreya-Italic.ttf</string>
+		<string>Font/Alegreya-ExtraBoldItalic.ttf</string>
+		<string>Font/Alegreya-ExtraBold.ttf</string>
+		<string>Font/Alegreya-BoldItalic.ttf</string>
+		<string>Font/Alegreya-Bold.ttf</string>
+		<string>Font/Alegreya-BlackItalic.ttf</string>
+		<string>Font/Alegreya-Black.ttf</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -29,6 +43,8 @@
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>UILaunchStoryboardName</key>
+	<string>Launch Screen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
