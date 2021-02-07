@@ -19,8 +19,8 @@ struct MainTabView: View {
         ZStack {
             TabView(selection: $selected) {
                 MainView().tabItem { selected == 1 ? Image("logoMini"):Image("Home") }.tag(1)
-                SoundView().tabItem { selected == 2 ? Image("sounds"):Image("unSounds")}.tag(2)
-                ProfileView().tabItem { selected == 3 ? Image("profile"):Image("unProfile") }.tag(3)
+                SoundView().tabItem { selected == 2 ? Image("soundsIcon"):Image("unSounds")}.tag(2)
+                ProfileView().tabItem { selected == 3 ? Image("profileIcon"):Image("unProfile") }.tag(3)
             }
             
         }
