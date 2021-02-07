@@ -11,7 +11,7 @@ struct OnBoardView: View {
     @Binding var numberPage: Int
     var body: some View {
         ZStack {
-            Image("backgroundSplash").resizable().frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+            Image("BackgroundSplash").resizable().frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             VStack {
                 Spacer()
                 Image("logo").resizable().frame(width: 191, height: 199, alignment: .center)
