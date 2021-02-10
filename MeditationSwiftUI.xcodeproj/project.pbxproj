@@ -3,10 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B3631E625D3F84E00B4E2FB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3631E525D3F84E00B4E2FB /* UserModel.swift */; };
+		9B3631EA25D3F8DD00B4E2FB /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3631E925D3F8DD00B4E2FB /* Auth.swift */; };
+		9B3631EE25D3F92300B4E2FB /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3631ED25D3F92300B4E2FB /* SwiftyJSON */; };
+		9B3631F225D3F93E00B4E2FB /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3631F125D3F93E00B4E2FB /* Alamofire */; };
+		9B3631F725D41A9B00B4E2FB /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 9B3631F625D41A9B00B4E2FB /* SDWebImageSwiftUI */; };
+		9B3631FA25D41B9200B4E2FB /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3631F925D41B9200B4E2FB /* QuoteModel.swift */; };
+		9B3631FD25D41BE900B4E2FB /* FeelingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3631FC25D41BE900B4E2FB /* FeelingModel.swift */; };
+		9B36320025D41C3700B4E2FB /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3631FF25D41C3700B4E2FB /* Quote.swift */; };
+		9B36320625D41E6A00B4E2FB /* Feeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B36320525D41E6A00B4E2FB /* Feeling.swift */; };
+		9B36320925D43DC600B4E2FB /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B36320825D43DC600B4E2FB /* Helper.swift */; };
+		9B36320C25D4403000B4E2FB /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B36320B25D4403000B4E2FB /* ImagePickerView.swift */; };
 		C318EC0E25CF212D005131A9 /* MeditationSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC0D25CF212D005131A9 /* MeditationSwiftUIApp.swift */; };
 		C318EC1225CF212E005131A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C318EC1125CF212E005131A9 /* Assets.xcassets */; };
 		C318EC1525CF212E005131A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C318EC1425CF212E005131A9 /* Preview Assets.xcassets */; };
@@ -23,6 +34,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B3631E525D3F84E00B4E2FB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		9B3631E925D3F8DD00B4E2FB /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
+		9B3631F925D41B9200B4E2FB /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
+		9B3631FC25D41BE900B4E2FB /* FeelingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeelingModel.swift; sourceTree = "<group>"; };
+		9B3631FF25D41C3700B4E2FB /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		9B36320525D41E6A00B4E2FB /* Feeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feeling.swift; sourceTree = "<group>"; };
+		9B36320825D43DC600B4E2FB /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		9B36320B25D4403000B4E2FB /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		C318EC0A25CF212D005131A9 /* MeditationSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeditationSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C318EC0D25CF212D005131A9 /* MeditationSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationSwiftUIApp.swift; sourceTree = "<group>"; };
 		C318EC1125CF212E005131A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,12 +64,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3631F725D41A9B00B4E2FB /* SDWebImageSwiftUI in Frameworks */,
+				9B3631EE25D3F92300B4E2FB /* SwiftyJSON in Frameworks */,
+				9B3631F225D3F93E00B4E2FB /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B3631E125D3F80800B4E2FB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C318EC2A25CF2E85005131A9 /* RootView.swift */,
+				C318EC2325CF255A005131A9 /* OnBoardView.swift */,
+				C318EC2D25CF2F1F005131A9 /* SignInView.swift */,
+				C318EC3125CF3722005131A9 /* RegistrationView.swift */,
+				C318EC3425CF3ECA005131A9 /* MainTabView.swift */,
+				C318EC3725D00056005131A9 /* MainView.swift */,
+				C318EC3A25D0008E005131A9 /* SoundView.swift */,
+				C318EC3D25D000F7005131A9 /* ProfileView.swift */,
+				9B36320B25D4403000B4E2FB /* ImagePickerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9B3631E325D3F82500B4E2FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9B3631E525D3F84E00B4E2FB /* UserModel.swift */,
+				9B3631F925D41B9200B4E2FB /* QuoteModel.swift */,
+				9B3631FC25D41BE900B4E2FB /* FeelingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9B3631E425D3F82D00B4E2FB /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				9B3631E925D3F8DD00B4E2FB /* Auth.swift */,
+				9B3631FF25D41C3700B4E2FB /* Quote.swift */,
+				9B36320525D41E6A00B4E2FB /* Feeling.swift */,
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
 		C318EC0125CF212D005131A9 = {
 			isa = PBXGroup;
 			children = (
@@ -72,18 +130,14 @@
 			children = (
 				C318EC2625CF26F1005131A9 /* Font */,
 				C318EC0D25CF212D005131A9 /* MeditationSwiftUIApp.swift */,
-				C318EC2A25CF2E85005131A9 /* RootView.swift */,
-				C318EC2325CF255A005131A9 /* OnBoardView.swift */,
-				C318EC2D25CF2F1F005131A9 /* SignInView.swift */,
-				C318EC3125CF3722005131A9 /* RegistrationView.swift */,
-				C318EC3425CF3ECA005131A9 /* MainTabView.swift */,
-				C318EC3725D00056005131A9 /* MainView.swift */,
-				C318EC3A25D0008E005131A9 /* SoundView.swift */,
-				C318EC3D25D000F7005131A9 /* ProfileView.swift */,
+				9B3631E325D3F82500B4E2FB /* Model */,
+				9B3631E425D3F82D00B4E2FB /* ModelView */,
+				9B3631E125D3F80800B4E2FB /* Views */,
 				C318EC1125CF212E005131A9 /* Assets.xcassets */,
 				C318EC1625CF212E005131A9 /* Info.plist */,
 				C318EC1D25CF213F005131A9 /* Launch Screen.storyboard */,
 				C318EC1325CF212E005131A9 /* Preview Content */,
+				9B36320825D43DC600B4E2FB /* Helper.swift */,
 			);
 			path = MeditationSwiftUI;
 			sourceTree = "<group>";
@@ -112,6 +166,11 @@
 			dependencies = (
 			);
 			name = MeditationSwiftUI;
+			packageProductDependencies = (
+				9B3631ED25D3F92300B4E2FB /* SwiftyJSON */,
+				9B3631F125D3F93E00B4E2FB /* Alamofire */,
+				9B3631F625D41A9B00B4E2FB /* SDWebImageSwiftUI */,
+			);
 			productName = MeditationSwiftUI;
 			productReference = C318EC0A25CF212D005131A9 /* MeditationSwiftUI.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +198,11 @@
 				Base,
 			);
 			mainGroup = C318EC0125CF212D005131A9;
+			packageReferences = (
+				9B3631EC25D3F92200B4E2FB /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				9B3631F025D3F93E00B4E2FB /* XCRemoteSwiftPackageReference "Alamofire" */,
+				9B3631F525D41A9B00B4E2FB /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = C318EC0B25CF212D005131A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -168,14 +232,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				C318EC2425CF255A005131A9 /* OnBoardView.swift in Sources */,
+				9B3631FD25D41BE900B4E2FB /* FeelingModel.swift in Sources */,
 				C318EC3E25D000F7005131A9 /* ProfileView.swift in Sources */,
 				C318EC3825D00056005131A9 /* MainView.swift in Sources */,
 				C318EC0E25CF212D005131A9 /* MeditationSwiftUIApp.swift in Sources */,
 				C318EC2E25CF2F1F005131A9 /* SignInView.swift in Sources */,
+				9B36320625D41E6A00B4E2FB /* Feeling.swift in Sources */,
+				9B36320925D43DC600B4E2FB /* Helper.swift in Sources */,
 				C318EC2B25CF2E85005131A9 /* RootView.swift in Sources */,
+				9B3631EA25D3F8DD00B4E2FB /* Auth.swift in Sources */,
 				C318EC3225CF3722005131A9 /* RegistrationView.swift in Sources */,
+				9B3631FA25D41B9200B4E2FB /* QuoteModel.swift in Sources */,
 				C318EC3B25D0008E005131A9 /* SoundView.swift in Sources */,
+				9B3631E625D3F84E00B4E2FB /* UserModel.swift in Sources */,
+				9B36320025D41C3700B4E2FB /* Quote.swift in Sources */,
 				C318EC3525CF3ECA005131A9 /* MainTabView.swift in Sources */,
+				9B36320C25D4403000B4E2FB /* ImagePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +436,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B3631EC25D3F92200B4E2FB /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		9B3631F025D3F93E00B4E2FB /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+		9B3631F525D41A9B00B4E2FB /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B3631ED25D3F92300B4E2FB /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3631EC25D3F92200B4E2FB /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		9B3631F125D3F93E00B4E2FB /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3631F025D3F93E00B4E2FB /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		9B3631F625D41A9B00B4E2FB /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B3631F525D41A9B00B4E2FB /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C318EC0225CF212D005131A9 /* Project object */;
 }

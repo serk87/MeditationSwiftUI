@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct MainTabView: View {
-    
-    
     @Binding var numberPage : Int
     @State var selected = 1
     
@@ -20,18 +18,11 @@ struct MainTabView: View {
             TabView(selection: $selected) {
                 MainView().tabItem { selected == 1 ? Image("logoMini"):Image("Home") }.tag(1)
                 SoundView().tabItem { selected == 2 ? Image("soundsIcon"):Image("unSounds")}.tag(2)
-                ProfileView().tabItem { selected == 3 ? Image("profileIcon"):Image("unProfile") }.tag(3)
-            }
+                ProfileView(numberPage: $numberPage).tabItem { selected == 3 ? Image("profileIcon"):Image("unProfile") }.tag(3)
+            }.background(Color.blue)
             
         }
-        .onAppear(perform: {
-            UITabBar.appearance().barTintColor = UIColor(red: 37/255, green: 51/255, blue: 52/255, alpha: 1.0)
-        })
+        
     }
 }
 
-struct MainTabView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainTabView(numberPage: .constant(4))
-    }
-}

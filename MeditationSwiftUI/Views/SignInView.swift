@@ -15,6 +15,8 @@ struct SignInView: View {
     @State var showAlertEmpty = false
     @State var showAlertEmail = false
     
+    @ObservedObject var auth = Auth()
+    
     var body: some View {
         ZStack {
             Color(red: 37/255, green: 51/255, blue: 52/255)
@@ -22,7 +24,7 @@ struct SignInView: View {
                 Spacer()
                 HStack {
                     VStack(alignment: .leading, spacing: 30) {
-                        Image("logo")
+                        Image("Logo")
                             .resizable()
                             .frame(width: 43.49, height: 49)
                         Text("Вход")
@@ -45,6 +47,7 @@ struct SignInView: View {
                         showAlertEmpty.toggle()
                     }
                     if email.contains("@") {
+                        auth.signIn(email: email, password: password)
                         numberPage = 4
                     } else {
                         showAlertEmail.toggle()

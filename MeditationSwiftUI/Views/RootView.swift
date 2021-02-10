@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RootView: View {
     @State var numberPage = 1
+    
+    
     var body: some View {
         if numberPage == 1 {
             OnBoardView(numberPage: $numberPage)
@@ -24,6 +26,6 @@ struct RootView: View {
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView()
+        RootView(numberPage: 3)
     }
 }

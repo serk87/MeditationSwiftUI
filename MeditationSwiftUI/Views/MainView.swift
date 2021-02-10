@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct MainView: View {
     @State var showMenu = false
+    
+    init() {
+        UITabBar.appearance().barTintColor = UIColor(red: 37/255, green: 51/255, blue: 52/255, alpha: 1.0)
+    }
+    
     var body: some View {
         ZStack {
             Color(red: 37/255, green: 51/255, blue: 52/255)
@@ -29,27 +35,32 @@ struct MainView_Previews: PreviewProvider {
 
 struct MainInView: View {
     @Binding var showMenu: Bool
+    @State var user = User(email: "", nickName: "", avatar: "", token: "")
+    @ObservedObject var quotes = Quote()
+    @ObservedObject var feeling = Felling()
+  
     var body: some View {
         ScrollView(.vertical, showsIndicators: false, content: {
             VStack {
                 HStack {
-                    Image("hamburger")
+                    Image("Hamburger")
                         .resizable()
                         .frame(width: 22, height: 18)
                         .onTapGesture {
                             showMenu.toggle()
                         }
                     Spacer()
-                    Image("logo")
+                    Image("Logo")
                         .resizable()
                         .frame(width: 43.41, height: 49)
                     Spacer()
-                    Image("avatar")
+                    WebImage(url: URL(string: user.avatar))
+                        .placeholder(Image("avatar"))
                         .resizable()
                         .clipShape(Circle())
                         .frame(width: 35, height: 35)
                 } .padding(.horizontal, 25).padding(.top, 75)
-                Text("С возвращением, Эмиль!")
+                Text("С возвращением, \(user.nickName)!")
                     .font(.custom("Alegreya-Medium", size: 30))
                     .foregroundColor(.white)
                 Text("Каким ты себя ощущаешь сегодня?")
@@ -60,29 +71,38 @@ struct MainInView: View {
                 VStack {
                     ScrollView(.horizontal, showsIndicators: false, content: {
                         HStack {
-                            ForEach(0...10, id: \.self) { i in
+                            ForEach(feeling.feelings, id: \.self) { i in
                                 VStack {
-                                    Rectangle()
-                                        .frame(width: 62, height: 65)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(20)
-                                    Text("Спокойным")
+                                    ZStack {
+                                        Rectangle()
+                                            .frame(width: 62, height: 65)
+                                            .foregroundColor(.white)
+                                            .cornerRadius(20)
+                                        WebImage(url: URL(string: i.image))
+                                    }
+                                    Text(i.title)
                                         .font(.custom("AlegreyaSans-Regular", size: 12))
                                         .foregroundColor(.white)
                                 }
+                                .frame(width: 105)
                             }
                         }
                     }).padding(.horizontal).padding(.bottom, 20)
                     
                     
                     VStack(spacing: 20) {
-                        ForEach(0...10, id: \.self) { i in
+                        ForEach(quotes.quotes, id: \.self) { i in
                             HStack(spacing: 0) {
                                 ZStack {
+                                    WebImage(url: URL(string: i.image))
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 166, height: 111, alignment: .center)
+                                        .padding(.leading, 150)
                                     VStack(alignment: .leading, spacing: 5) {
-                                        Text("Заголовок блока")
+                                        Text(i.title)
                                             .font(.custom("Alegreya-Medium", size: 25))
-                                        Text("Кратенькое описание\nблока с двумя строчками")
+                                        Text(i.description)
                                             .font(.custom("AlegreyaSans-Medium", size: 15))
                                         Button(action: {}, label: {
                                             Text("подбробнее")
@@ -93,10 +113,9 @@ struct MainInView: View {
                                                 .background(Color(red: 37/255, green: 51/255, blue: 52/255))
                                         }).cornerRadius(10)
                                         
-                                    }.padding(.trailing, 120)
-                                    Image("image").resizable()
-                                        .frame(width: 166, height: 111, alignment: .center)
-                                        .padding(.leading, 150)
+                                    }
+                                    .padding(.trailing, UIScreen.main.bounds.width/3)
+                                    .padding(.leading, 3.1)
                                 }
                             }
                             .frame(width: UIScreen.main.bounds.width-30,height: 170)
@@ -107,6 +126,17 @@ struct MainInView: View {
                     
                 }
             }
+        })
+        
+        .onAppear(perform: {
+            let defaults = UserDefaults.standard
+            guard let userData = defaults.object(forKey: "user") as? Data else {
+                return
+            }
+            guard let user = try? PropertyListDecoder().decode(User.self, from: userData) else {
+                return
+            }
+            self.user = user
         })
     }
 }

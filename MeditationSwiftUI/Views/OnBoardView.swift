@@ -14,7 +14,7 @@ struct OnBoardView: View {
             Image("BackgroundSplash").resizable().frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             VStack {
                 Spacer()
-                Image("logo").resizable().frame(width: 191, height: 199, alignment: .center)
+                Image("Logo").resizable().frame(width: 191, height: 199, alignment: .center)
                 Text("ПРИВЕТ").font(.custom("Alegreya-Bold", size: 34)).foregroundColor(.white).padding(.bottom, 3)
                 Text("Наслаждайся отборочными.\nБудь внимателен.\nДелай хорошо.")
                     .font(.custom("AlegreyaSans-Medium", size: 20))

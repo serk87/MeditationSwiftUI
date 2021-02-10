@@ -21,7 +21,7 @@
                                     <constraint firstAttribute="width" secondItem="COi-i2-gOT" secondAttribute="height" multiplier="207:448" id="kSW-8e-8TZ"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-3s-ai9">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="FjW-3s-ai9">
                                 <rect key="frame" x="106" y="341.5" width="202" height="213"/>
                             </imageView>
                         </subviews>
@@ -46,6 +46,6 @@
     </scenes>
     <resources>
         <image name="BackgroundSplash" width="375" height="812"/>
-        <image name="logo" width="512" height="512"/>
+        <image name="Logo" width="250" height="40"/>
     </resources>
 </document>
