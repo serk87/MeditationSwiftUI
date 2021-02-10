@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import RealmSwift
 
 struct SinglePhotoView: View {
     
@@ -34,14 +35,14 @@ struct SinglePhotoView: View {
             .padding(.bottom, 30)
             HStack {
                 Button(action: {
-                    let defaults = UserDefaults.standard
-                    if let photoArray = defaults.array(forKey: "photo") {
+                    
+                    let realm = try! Realm()
+                    try! realm.write {
+                        let selectPhoto = realm.objects(PhotoModelObject.self).filter("photoName == %@", photo)
+                        realm.delete(selectPhoto)
                         
-                        let mutatingPhoto = photoArray.filter{ $0 as! String != photo } as! [String]
-                        
-                        defaults.setValue(mutatingPhoto, forKey: "photo")
-                        showSinglePhoto.toggle()
                     }
+                    showSinglePhoto.toggle()
                 }, label: {
                     Text("Удалить")
                         .foregroundColor(.white)
@@ -57,17 +58,16 @@ struct SinglePhotoView: View {
         }.gesture(
             DragGesture(minimumDistance: UIScreen.main.bounds.width/2)
                 .onEnded({ (value) in
-                    if value.translation.width < CGFloat(UIScreen.main.bounds.width/2) {
+                    if value.translation.width > CGFloat(UIScreen.main.bounds.width/2) {
                         self.showSinglePhoto.toggle()
                     } else {
-                        let defaults = UserDefaults.standard
-                        if let photoArray = defaults.array(forKey: "photo") {
+                        let realm = try! Realm()
+                        try! realm.write {
+                            let selectPhoto = realm.objects(PhotoModelObject.self).filter("photoName == %@", photo)
+                            realm.delete(selectPhoto)
                             
-                            var mutatingPhoto = photoArray.filter{ $0 as! String != photo } as! [String]
-                            
-                            defaults.setValue(mutatingPhoto, forKey: "photo")
-                            showSinglePhoto.toggle()
                         }
+                        showSinglePhoto.toggle()
                     }
                 })
         )

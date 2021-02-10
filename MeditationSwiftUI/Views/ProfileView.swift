@@ -9,6 +9,7 @@ import SwiftUI
 import UIKit
 import Foundation
 import SDWebImageSwiftUI
+import RealmSwift
 
 struct ProfileView: View {
     
@@ -51,7 +52,7 @@ struct ProfileInView: View {
     var columns: [GridItem] =
         Array(repeating: .init(.fixed(170)), count: 2)
     
-    @State var imagesArray = [String]()
+    @State var items: RealmSwift.Results<PhotoModelObject> = try! Realm().objects(PhotoModelObject.self)
     
     var body: some View {
         VStack(spacing: 10) {
@@ -86,17 +87,17 @@ struct ProfileInView: View {
                 .foregroundColor(.white)
             ScrollView {
                 LazyVGrid(columns: columns) {
-                    ForEach(imagesArray, id: \.self) { i in
+                    ForEach(items.freeze(), id: \.self) { i in
                         ZStack {
-                            Image(uiImage: Helper().loadImageFromDocumentDirectory(nameOfImage: i))
+                            Image(uiImage: Helper().loadImageFromDocumentDirectory(nameOfImage: i.photoName))
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 153, height: 115)
                                 .onTapGesture {
-                                    self.photo = i
+                                    self.photo = i.photoName
                                     self.showSinglePhoto.toggle()
                                 }
-                            Text("11:00")
+                            Text(i.time)
                                 .font(.custom("AlegreyaSans-Medium", size: 18))
                                 .foregroundColor(.white)
                                 .padding(.trailing, 70)
@@ -125,9 +126,7 @@ struct ProfileInView: View {
         }.sheet(isPresented: $isShowPhotoLibrary, content: {
             ImagePickerView(isPresented: $isShowPhotoLibrary)
                 .onDisappear(perform: {
-                    if let photoArray = UserDefaults.standard.array(forKey: "photo") {
-                        self.imagesArray = photoArray as! [String]
-                    }
+                    self.items = try! Realm().objects(PhotoModelObject.self)
                 })
         })
         .onAppear(perform: {
@@ -139,10 +138,7 @@ struct ProfileInView: View {
                 return
             }
             self.user = user
-            
-            if let photoArray = UserDefaults.standard.array(forKey: "photo") {
-                self.imagesArray = photoArray as! [String]
-            }
+            self.items = try! Realm().objects(PhotoModelObject.self)
         })
     }
 }

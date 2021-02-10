@@ -105,6 +105,8 @@ struct CustomTextField: View {
             if text.isEmpty { placeholder.font(.custom("AlegreyaSans-Regular", size: 18)).foregroundColor(Color(red: 190/255, green: 194/255, blue: 194/255))}
             VStack {
                 TextField("", text: $text, onEditingChanged: ediitingChange, onCommit: commit)
+                    .disableAutocorrection(true)
+                    .autocapitalization(.none)
                     .padding(.top, 5).padding(.bottom)
                     .foregroundColor(.white)
                 Rectangle().frame(height: 1).foregroundColor(Color(red: 190/255, green: 194/255, blue: 194/255))

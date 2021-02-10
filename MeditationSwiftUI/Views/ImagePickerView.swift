@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import UIKit
+import RealmSwift
 
 struct ImagePickerView: UIViewControllerRepresentable {
  
@@ -46,19 +47,18 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
             dateFormatter.timeStyle = DateFormatter.Style.short
             let time = dateFormatter.string(from: Date())
             
-            let photo = PhotoModel(time: time, photo: nameImage)
             
-            let defaults = UserDefaults.standard
             
-           
-            if let photoArray = defaults.array(forKey: "photo") {
+            //Realm
             
-            var mutatingPhoto = photoArray as! [String]
-            mutatingPhoto.append(nameImage)
-            defaults.setValue(mutatingPhoto, forKey: "photo")
-            } else {
-                defaults.set([nameImage], forKey: "photo")
+            let realm = try! Realm()
+            let photoObject = PhotoModelObject()
+            photoObject.time = time
+            photoObject.photoName = nameImage
+            try! realm.write {
+                realm.add(photoObject, update: .modified)
             }
+            
             Helper().saveImageToDocumentDirectory(image: image, name: nameImage)
         }
         self.isPresented = false

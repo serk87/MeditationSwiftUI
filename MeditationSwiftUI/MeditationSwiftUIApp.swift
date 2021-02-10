@@ -11,7 +11,9 @@ import Foundation
 
 @main
 struct MeditationSwiftUIApp: App {
+    
     private var user = User(email: "", nickName: "", avatar: "", token: "")
+    
     init() {
         let defaults = UserDefaults.standard
         guard let userData = defaults.object(forKey: "user") as? Data else {
