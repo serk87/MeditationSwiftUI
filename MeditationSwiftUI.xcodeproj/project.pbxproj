@@ -31,6 +31,8 @@
 		C318EC3825D00056005131A9 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC3725D00056005131A9 /* MainView.swift */; };
 		C318EC3B25D0008E005131A9 /* SoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC3A25D0008E005131A9 /* SoundView.swift */; };
 		C318EC3E25D000F7005131A9 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC3D25D000F7005131A9 /* ProfileView.swift */; };
+		C318EC4425D46D53005131A9 /* SinglePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC4325D46D53005131A9 /* SinglePhotoView.swift */; };
+		C318EC4725D47DAC005131A9 /* PhotoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC4625D47DAC005131A9 /* PhotoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		C318EC3725D00056005131A9 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		C318EC3A25D0008E005131A9 /* SoundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundView.swift; sourceTree = "<group>"; };
 		C318EC3D25D000F7005131A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C318EC4325D46D53005131A9 /* SinglePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePhotoView.swift; sourceTree = "<group>"; };
+		C318EC4625D47DAC005131A9 /* PhotoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,7 @@
 				C318EC3725D00056005131A9 /* MainView.swift */,
 				C318EC3A25D0008E005131A9 /* SoundView.swift */,
 				C318EC3D25D000F7005131A9 /* ProfileView.swift */,
+				C318EC4325D46D53005131A9 /* SinglePhotoView.swift */,
 				9B36320B25D4403000B4E2FB /* ImagePickerView.swift */,
 			);
 			path = Views;
@@ -95,6 +100,7 @@
 				9B3631E525D3F84E00B4E2FB /* UserModel.swift */,
 				9B3631F925D41B9200B4E2FB /* QuoteModel.swift */,
 				9B3631FC25D41BE900B4E2FB /* FeelingModel.swift */,
+				C318EC4625D47DAC005131A9 /* PhotoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +242,7 @@
 				C318EC3E25D000F7005131A9 /* ProfileView.swift in Sources */,
 				C318EC3825D00056005131A9 /* MainView.swift in Sources */,
 				C318EC0E25CF212D005131A9 /* MeditationSwiftUIApp.swift in Sources */,
+				C318EC4725D47DAC005131A9 /* PhotoModel.swift in Sources */,
 				C318EC2E25CF2F1F005131A9 /* SignInView.swift in Sources */,
 				9B36320625D41E6A00B4E2FB /* Feeling.swift in Sources */,
 				9B36320925D43DC600B4E2FB /* Helper.swift in Sources */,
@@ -244,6 +251,7 @@
 				C318EC3225CF3722005131A9 /* RegistrationView.swift in Sources */,
 				9B3631FA25D41B9200B4E2FB /* QuoteModel.swift in Sources */,
 				C318EC3B25D0008E005131A9 /* SoundView.swift in Sources */,
+				C318EC4425D46D53005131A9 /* SinglePhotoView.swift in Sources */,
 				9B3631E625D3F84E00B4E2FB /* UserModel.swift in Sources */,
 				9B36320025D41C3700B4E2FB /* Quote.swift in Sources */,
 				C318EC3525CF3ECA005131A9 /* MainTabView.swift in Sources */,

@@ -41,12 +41,24 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             let nameImage = "\(UUID().uuidString).png"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.timeStyle = DateFormatter.Style.short
+            let time = dateFormatter.string(from: Date())
+            
+            let photo = PhotoModel(time: time, photo: nameImage)
+            
             let defaults = UserDefaults.standard
-            let photoArray = defaults.array(forKey: "photo")
+            
+           
+            if let photoArray = defaults.array(forKey: "photo") {
             
             var mutatingPhoto = photoArray as! [String]
             mutatingPhoto.append(nameImage)
             defaults.setValue(mutatingPhoto, forKey: "photo")
+            } else {
+                defaults.set([nameImage], forKey: "photo")
+            }
             Helper().saveImageToDocumentDirectory(image: image, name: nameImage)
         }
         self.isPresented = false
