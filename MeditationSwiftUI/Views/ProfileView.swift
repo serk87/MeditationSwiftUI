@@ -2,7 +2,7 @@
 //  ProfileView.swift
 //  MeditationSwiftUI
 //
-//  Created by Администратор on 07.02.2021.
+//  Created by Sergey Klimovich on 07.02.2021.
 //
 
 import SwiftUI

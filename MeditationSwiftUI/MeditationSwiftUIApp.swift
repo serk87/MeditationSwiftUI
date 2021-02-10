@@ -2,7 +2,7 @@
 //  MeditationSwiftUIApp.swift
 //  MeditationSwiftUI
 //
-//  Created by Администратор on 06.02.2021.
+//  Created by  Sergey Klimovich on 06.02.2021.
 //
 
 import SwiftUI

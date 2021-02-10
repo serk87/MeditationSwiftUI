@@ -2,7 +2,7 @@
 //  Feeling.swift
 //  MeditationSwiftUI
 //
-//  Created by ladmin on 10.02.2021.
+//  Created by Sergey Klimovich on 10.02.2021.
 //
 
 import Foundation

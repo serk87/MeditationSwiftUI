@@ -146,8 +146,8 @@
 				C318EC1125CF212E005131A9 /* Assets.xcassets */,
 				C318EC1625CF212E005131A9 /* Info.plist */,
 				C318EC1D25CF213F005131A9 /* Launch Screen.storyboard */,
-				C318EC1325CF212E005131A9 /* Preview Content */,
 				9B36320825D43DC600B4E2FB /* Helper.swift */,
+				C318EC1325CF212E005131A9 /* Preview Content */,
 			);
 			path = MeditationSwiftUI;
 			sourceTree = "<group>";

@@ -2,7 +2,7 @@
 //  PhotoModelObject.swift
 //  MeditationSwiftUI
 //
-//  Created by Администратор on 11.02.2021.
+//  Created by Sergey Klimovich on 11.02.2021.
 //
 
 import Foundation
