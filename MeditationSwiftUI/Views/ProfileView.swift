@@ -72,7 +72,7 @@ struct ProfileInView: View {
                     .font(.custom("AlegreyaSans-Medium", size: 15))
                     .foregroundColor(.white)
                     .onTapGesture {
-                        let user = User(email: "", nickName: "", avatar: "", token: "")
+                        let user = User(email: self.user.email, nickName: self.user.nickName, avatar: self.user.avatar, token: "")
                         UserDefaults.standard.set(try? PropertyListEncoder().encode(user), forKey: "user")
                         numberPage = 2
                         

@@ -12,8 +12,8 @@ struct SignInView: View {
     @Binding var numberPage: Int
     @State var email = ""
     @State var password = ""
-    @State var showAlertEmpty = false
-    @State var showAlertEmail = false
+    @State var showAlert = false
+    @State var errorMsg = ""
     
     @ObservedObject var auth = Auth()
     
@@ -44,13 +44,20 @@ struct SignInView: View {
                 
                 Button(action: {
                     if email == "" || password == "" {
-                        showAlertEmpty.toggle()
-                    }
-                    if email.contains("@") {
-                        auth.signIn(email: email, password: password)
-                        numberPage = 4
+                        self.errorMsg = "Поле Email и пароль не могут быть пустыми"
+                        showAlert.toggle()
+                    } else if email.contains("@") {
+                        auth.signIn(email: email, password: password) { user, error  in
+                            if error != "Success" {
+                                self.errorMsg = error
+                                showAlert.toggle()
+                            } else {
+                                numberPage = 4
+                            }
+                        }
                     } else {
-                        showAlertEmail.toggle()
+                        self.errorMsg = "В поле Email должна использоваться @"
+                        showAlert.toggle()
                     }
                     
                 }, label: {
@@ -61,8 +68,9 @@ struct SignInView: View {
                         .background(Color(red: 124/255, green: 154/255, blue: 146/255))
                         .cornerRadius(10)
                 })
-                .alert(isPresented: $showAlertEmpty, content: {
-                    Alert(title: Text("Ошибка"), message: Text("Не должно быть пустых полей"), dismissButton: .default(Text("OK")))
+                .alert(isPresented: $showAlert, content: {
+                    Alert(title: Text("Ошибка"), message: Text(errorMsg), dismissButton: .default(Text("OK")))
+                   
                 })
                 
                 HStack {
@@ -76,14 +84,22 @@ struct SignInView: View {
                             numberPage = 3
                         }
                 }.padding(.top)
-                .alert(isPresented: $showAlertEmail, content: {
-                    Alert(title: Text("Ошибка"), message: Text("Email должен содержать @"), dismissButton: .default(Text("OK")))
-                })
+                
                 Spacer()
                 Image("backgroundSignIn")
                 
             }
         }.edgesIgnoringSafeArea(.all)
+        .onAppear(perform: {
+            let defaults = UserDefaults.standard
+            guard let userData = defaults.object(forKey: "user") as? Data else {
+                return
+            }
+            guard let user = try? PropertyListDecoder().decode(User.self, from: userData) else {
+                return
+            }
+            self.email = user.email
+        })
     }
 }
 

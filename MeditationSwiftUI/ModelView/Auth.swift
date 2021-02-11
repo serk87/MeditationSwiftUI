@@ -13,10 +13,9 @@ import SwiftyJSON
 class Auth: ObservableObject {
     
     @Published var user = User(email: "", nickName: "", avatar: "", token: "")
-    @Published var error = ""
     
     
-    func signIn(email: String, password: String) {
+    func signIn(email: String, password: String, completionHandler: ((_ result: User,_ error: String) -> Void)? = nil) {
         let url = "http://mskko2021.mad.hakta.pro/api/user/login"
         let parameters: [String: String] = [
                     "email": email,
@@ -34,12 +33,14 @@ class Auth: ObservableObject {
                 let user = User(email: email, nickName: nickName, avatar: avatar, token: token)
                 self.user = user
                 UserDefaults.standard.set(try? PropertyListEncoder().encode(user), forKey: "user")
-            
-            case .failure(_):
-                let error = JSON(response.data)
-                self.error = error["error"].stringValue
-                print(error["error"].stringValue)
+                completionHandler!(user, "Success")
+            case .failure(let error):
+                let errorJson = JSON(response.data)
+                let errorDescription = errorJson["error"].stringValue
+                completionHandler!(self.user, errorDescription)
             }
+            
         }
     }
+    
 }
