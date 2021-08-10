@@ -91,14 +91,9 @@ struct SignInView: View {
             }
         }.edgesIgnoringSafeArea(.all)
         .onAppear(perform: {
-            let defaults = UserDefaults.standard
-            guard let userData = defaults.object(forKey: "user") as? Data else {
-                return
+            if UserDefaultsData.shared.getData(key: "user").nickName != "" {
+                self.email = UserDefaultsData.shared.getData(key: "user").email
             }
-            guard let user = try? PropertyListDecoder().decode(User.self, from: userData) else {
-                return
-            }
-            self.email = user.email
         })
     }
 }

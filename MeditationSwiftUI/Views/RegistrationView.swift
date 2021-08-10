@@ -14,18 +14,13 @@ struct RegistrationView: View {
     var body: some View {
         ZStack {
             Color(red: 37/255, green: 51/255, blue: 52/255)
-            
             VStack {
-                
                 Spacer()
-                
                 Text("Тут будет\nрегистрация")
                     .font(.custom("Alegreya-Medium", size: 30))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.leading)
-                
                 Spacer()
-                
                 Button(action: {
                     numberPage = 2
                 }, label: {

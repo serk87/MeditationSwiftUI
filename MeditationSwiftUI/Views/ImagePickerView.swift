@@ -46,19 +46,17 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
             let dateFormatter = DateFormatter()
             dateFormatter.timeStyle = DateFormatter.Style.short
             let time = dateFormatter.string(from: Date())
-            
-            
-            
-            //Realm
-            
-            let realm = try! Realm()
             let photoObject = PhotoModelObject()
             photoObject.time = time
             photoObject.photoName = nameImage
-            try! realm.write {
-                realm.add(photoObject, update: .modified)
+            do {
+                let realm = try Realm()
+                try realm.write {
+                    realm.add(photoObject, update: .modified)
+                }
+            } catch {
+                print("error")
             }
-            
             Helper().saveImageToDocumentDirectory(image: image, name: nameImage)
         }
         self.isPresented = false

@@ -12,7 +12,6 @@ struct SinglePhotoView: View {
     
     @Binding var photo : String
     @Binding var showSinglePhoto : Bool
-    
     @State var scale: CGFloat = 1.0
     
     var body: some View {
@@ -23,7 +22,6 @@ struct SinglePhotoView: View {
                     .scaledToFill()
                     .scaleEffect(scale)
                     .frame(width: UIScreen.main.bounds.width, height: 200)
-                    
                     .onTapGesture(count: 2) {
                         if scale == 1.0 {
                             scale = 2.0
@@ -61,13 +59,16 @@ struct SinglePhotoView: View {
                     if value.translation.width > CGFloat(UIScreen.main.bounds.width/2) {
                         self.showSinglePhoto.toggle()
                     } else {
-                        let realm = try! Realm()
-                        try! realm.write {
-                            let selectPhoto = realm.objects(PhotoModelObject.self).filter("photoName == %@", photo)
-                            realm.delete(selectPhoto)
-                            
+                        do {
+                            let realm = try Realm()
+                            try realm.write {
+                                let selectPhoto = realm.objects(PhotoModelObject.self).filter("photoName == %@", photo)
+                                realm.delete(selectPhoto)
+                            }
+                            showSinglePhoto.toggle()
+                        } catch {
+                            print("error")
                         }
-                        showSinglePhoto.toggle()
                     }
                 })
         )

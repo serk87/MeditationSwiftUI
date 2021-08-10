@@ -12,16 +12,17 @@ import SwiftUI
 
 
 class Felling: ObservableObject {
+    
     @Published var feelings = [FeelingModel]()
     @Published var error = ""
+    
     init() {
         getFelling()
     }
     
     func getFelling() {
         let url = "http://mskko2021.mad.hakta.pro/api/feelings"
-        
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate().responseJSON { [unowned self] response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -33,7 +34,6 @@ class Felling: ObservableObject {
             case .failure(_):
                 let error = JSON(response.data)
                 self.error = error["error"].stringValue
-                print(error["error"].stringValue)
             }
         }
     }

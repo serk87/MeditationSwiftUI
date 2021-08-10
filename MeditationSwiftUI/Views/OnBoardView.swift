@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct OnBoardView: View {
+    
     @Binding var numberPage: Int
+    
     var body: some View {
         ZStack {
             Image("BackgroundSplash").resizable().frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)

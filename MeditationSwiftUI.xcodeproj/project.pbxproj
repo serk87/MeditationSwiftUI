@@ -35,6 +35,7 @@
 		C318EC5C25D4846B005131A9 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C318EC5B25D4846B005131A9 /* Realm */; };
 		C318EC5E25D4846B005131A9 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C318EC5D25D4846B005131A9 /* RealmSwift */; };
 		C318EC6125D484D5005131A9 /* PhotoModelObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C318EC6025D484D5005131A9 /* PhotoModelObject.swift */; };
+		D24C0AFD26C2D29500258EEC /* UserDefaultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24C0AFC26C2D29500258EEC /* UserDefaultsData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		C318EC3D25D000F7005131A9 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C318EC4325D46D53005131A9 /* SinglePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglePhotoView.swift; sourceTree = "<group>"; };
 		C318EC6025D484D5005131A9 /* PhotoModelObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoModelObject.swift; sourceTree = "<group>"; };
+		D24C0AFC26C2D29500258EEC /* UserDefaultsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				C318EC3D25D000F7005131A9 /* ProfileView.swift */,
 				C318EC4325D46D53005131A9 /* SinglePhotoView.swift */,
 				9B36320B25D4403000B4E2FB /* ImagePickerView.swift */,
+				D24C0AFC26C2D29500258EEC /* UserDefaultsData.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				9B3631EA25D3F8DD00B4E2FB /* Auth.swift in Sources */,
 				C318EC3225CF3722005131A9 /* RegistrationView.swift in Sources */,
 				9B3631FA25D41B9200B4E2FB /* QuoteModel.swift in Sources */,
+				D24C0AFD26C2D29500258EEC /* UserDefaultsData.swift in Sources */,
 				C318EC3B25D0008E005131A9 /* SoundView.swift in Sources */,
 				C318EC4425D46D53005131A9 /* SinglePhotoView.swift in Sources */,
 				9B3631E625D3F84E00B4E2FB /* UserModel.swift in Sources */,

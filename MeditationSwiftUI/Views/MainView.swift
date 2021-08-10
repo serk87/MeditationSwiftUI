@@ -34,6 +34,7 @@ struct MainView_Previews: PreviewProvider {
 }
 
 struct MainInView: View {
+    
     @Binding var showMenu: Bool
     @State var user = User(email: "", nickName: "", avatar: "", token: "")
     @ObservedObject var quotes = Quote()
@@ -129,14 +130,9 @@ struct MainInView: View {
         })
         
         .onAppear(perform: {
-            let defaults = UserDefaults.standard
-            guard let userData = defaults.object(forKey: "user") as? Data else {
-                return
+            if UserDefaultsData.shared.getData(key: "user").nickName != "" {
+                self.user = UserDefaultsData.shared.getData(key: "user")
             }
-            guard let user = try? PropertyListDecoder().decode(User.self, from: userData) else {
-                return
-            }
-            self.user = user
         })
     }
 }

@@ -17,6 +17,7 @@ struct ProfileView: View {
     @Binding var numberPage : Int
     @State var showSinglePhoto = false
     @State var photo = ""
+    
     var body: some View {
         ZStack {
             Color(red: 37/255, green: 51/255, blue: 52/255)
@@ -130,15 +131,14 @@ struct ProfileInView: View {
                 })
         })
         .onAppear(perform: {
-            let defaults = UserDefaults.standard
-            guard let userData = defaults.object(forKey: "user") as? Data else {
-                return
+            if UserDefaultsData.shared.getData(key: "user").nickName != "" {
+                self.user = UserDefaultsData.shared.getData(key: "user")
             }
-            guard let user = try? PropertyListDecoder().decode(User.self, from: userData) else {
-                return
+            do {
+                self.items = try Realm().objects(PhotoModelObject.self)
+            } catch {
+                print("error")
             }
-            self.user = user
-            self.items = try! Realm().objects(PhotoModelObject.self)
         })
     }
 }

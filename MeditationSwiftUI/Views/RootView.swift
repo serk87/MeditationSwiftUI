@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RootView: View {
-    @State var numberPage = 1
     
+    @State var numberPage = 1
     
     var body: some View {
         if numberPage == 1 {

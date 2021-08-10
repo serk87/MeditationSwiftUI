@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct MainTabView: View {
+    
     @Binding var numberPage : Int
     @State var selected = 1
-    
-    
     
     var body: some View {
         ZStack {
